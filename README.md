@@ -32,6 +32,7 @@ while True:
         if (left[0].y - left[1].y) < 0.004:
             pyautogui.click()
             pyautogui.sleep(1)
+#cv2-for-cmputer-vision
 
     cv2.imshow('Eye Controlled Mouse', frame)
     cv2.waitKey(1)
