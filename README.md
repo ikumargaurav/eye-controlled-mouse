@@ -32,6 +32,16 @@ while True:
         if (left[0].y - left[1].y) < 0.004:
             pyautogui.click()
             pyautogui.sleep(1)
+        right = [landmarks[374], landmarks[386]]  # Right eye upper and lower eyelids
+        for landmark in right:
+            x = int(landmark.x * frame_w)
+            y = int(landmark.y * frame_h)
+            cv2.circle(frame, (x, y), 3, (255, 0, 0))  # Draw circle for right eye landmarks
+
+        # Right Eye Blink Detection (distance between upper and lower eyelid)
+        if (right[0].y - right[1].y) < 0.004:  # Blink detection for right eye
+            pyautogui.click()
+            pyautogui.sleep(1)           
 #cv2-for-cmputer-vision
 #pyautogui-for-operating-cursor
 
